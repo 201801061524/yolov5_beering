@@ -525,6 +525,7 @@ def img2label_paths(img_paths):
     """Generates label file paths from corresponding image file paths by replacing `/images/` with `/labels/` and
     extension with `.txt`.
     """
+    # import pdb;pdb.set_trace()
     sa, sb = f"{os.sep}images{os.sep}", f"{os.sep}labels{os.sep}"  # /images/, /labels/ substrings
     return [sb.join(x.rsplit(sa, 1)).rsplit(".", 1)[0] + ".txt" for x in img_paths]
 
@@ -601,6 +602,7 @@ class LoadImagesAndLabels(Dataset):
             tqdm(None, desc=prefix + d, total=n, initial=n, bar_format=TQDM_BAR_FORMAT)  # display cache results
             if cache["msgs"]:
                 LOGGER.info("\n".join(cache["msgs"]))  # display warnings
+        # import pdb;pdb.set_trace()
         assert nf > 0 or not augment, f"{prefix}No labels found in {cache_path}, can not start training. {HELP_URL}"
 
         # Read cache

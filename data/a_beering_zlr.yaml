@@ -1,0 +1,29 @@
+
+path: ./data/ # dataset root dir
+train: images/train/ # train images (relative to 'path') 39384 images
+val: images/val/ # val images (relative to 'path') 15062 images
+test: images/test/ # test images (optional) https://eval.ai/web/challenges/challenge-page/800/overview
+
+# Classes
+names:
+  0: dog
+  1: person
+  2: cat
+  3: tv
+  4: car
+  5: meatballs
+  6: marinara sauce
+  7: tomato soup
+  8: chicken noodle soup
+  9: french onion soup
+  10: chicken breast
+  11: ribs
+  12: pulled pork
+  13: hamburger
+  14: cavity
+  15: nomarl
+  16: neglected
+  17: abnomarl
+
+
+# python train.py --img 640 --epochs 3 --data data/a_beering_zlr.yaml --weights yolov5s.pt
